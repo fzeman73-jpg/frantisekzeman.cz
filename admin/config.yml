@@ -1,0 +1,46 @@
+backend:
+  name: github
+  repo: fzeman73-jpg/frantisekzeman.cz
+  branch: main
+
+site_url: https://frantisekzeman.cz
+display_url: https://frantisekzeman.cz
+logo_url: https://frantisekzeman.cz/assets/img/favicon.png
+
+media_folder: assets/img/galerie
+public_folder: assets/img/galerie
+
+collections:
+  - name: obsah
+    label: Správa webu
+    files:
+      - name: koncerty
+        label: "🎤 Koncerty"
+        file: data/koncerty.json
+        fields:
+          - label: Koncerty
+            name: koncerty
+            widget: list
+            label_singular: koncert
+            summary: "{{fields.datum}} – {{fields.nazev}}"
+            fields:
+              - { label: "Datum", name: datum, widget: date, format: "YYYY-MM-DD", hint: "Den koncertu" }
+              - { label: "Čas (např. 19:30)", name: cas, widget: string, required: false, default: "" }
+              - { label: "Název akce", name: nazev, widget: string }
+              - { label: "Místo", name: misto, widget: string, hint: "Např. Balbínova poetická hospůdka, Praha 2" }
+              - { label: "Popis", name: popis, widget: text, required: false, default: "" }
+              - { label: "Typ", name: typ, widget: select, options: ["Koncert", "Moderování & koncert", "Festival", "Jiné"], default: "Koncert" }
+              - { label: "Odkaz (vstupenky / web akce)", name: odkaz, widget: string, required: false, default: "" }
+              - { label: "Text odkazu (např. Vstupenky)", name: odkazText, widget: string, required: false, default: "" }
+      - name: galerie
+        label: "📷 Galerie fotek"
+        file: data/galerie.json
+        fields:
+          - label: Fotky
+            name: fotky
+            widget: list
+            label_singular: fotka
+            summary: "{{fields.popisek}}"
+            fields:
+              - { label: "Fotka", name: obrazek, widget: image }
+              - { label: "Popisek", name: popisek, widget: string, required: false, default: "" }

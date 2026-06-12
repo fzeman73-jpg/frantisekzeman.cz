@@ -1,0 +1,16 @@
+{
+  "fotky": [
+    {"obrazek": "assets/img/galerie/nz5-9842.jpg", "popisek": "František Zeman"},
+    {"obrazek": "assets/img/galerie/nz5-9716.jpg", "popisek": "František Zeman"},
+    {"obrazek": "assets/img/galerie/nz5-9900.jpg", "popisek": "František Zeman"},
+    {"obrazek": "assets/img/galerie/nz6-1963.jpg", "popisek": "František Zeman"},
+    {"obrazek": "assets/img/galerie/krest-2025.jpg", "popisek": "Křest alba Kluci ze Šťastný planety"},
+    {"obrazek": "assets/img/galerie/koncert-2025a.jpg", "popisek": "Koncert"},
+    {"obrazek": "assets/img/galerie/koncert-2025b.jpg", "popisek": "Koncert"},
+    {"obrazek": "assets/img/galerie/koncert-2025c.jpg", "popisek": "Koncert"},
+    {"obrazek": "assets/img/galerie/koncert-2024a.jpg", "popisek": "Narozeninový koncert"},
+    {"obrazek": "assets/img/galerie/koncert-s-ivou.jpg", "popisek": "Koncert s Ivou"},
+    {"obrazek": "assets/img/galerie/koncert-2024b.jpg", "popisek": "Koncert"},
+    {"obrazek": "assets/img/galerie/koncert-2024c.jpg", "popisek": "Koncert"}
+  ]
+}
