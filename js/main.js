@@ -112,3 +112,25 @@ function observeReveals() {
 renderGigs();
 observeReveals();
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// ---------- SEO: strukturovaná data koncertů ----------
+function injectEventSchema() {
+  if (typeof KONCERTY === "undefined") return;
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const events = KONCERTY.filter(k => new Date(k.datum + "T00:00:00") >= today).map(k => ({
+    "@context": "https://schema.org",
+    "@type": "MusicEvent",
+    "name": k.nazev,
+    "startDate": k.datum + (k.cas ? "T" + k.cas : ""),
+    "location": { "@type": "Place", "name": k.misto, "address": k.misto },
+    "performer": { "@type": "MusicGroup", "name": "František Zeman" },
+    "description": k.popis,
+    ...(k.odkaz ? { "url": k.odkaz } : {})
+  }));
+  if (!events.length) return;
+  const s = document.createElement("script");
+  s.type = "application/ld+json";
+  s.textContent = JSON.stringify(events);
+  document.head.appendChild(s);
+}
+injectEventSchema();
