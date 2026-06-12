@@ -1,0 +1,59 @@
+// ============================================================
+// KONCERTY – tento soubor může upravovat kdokoli.
+// Stačí přidat / smazat blok ve složených závorkách { ... }.
+// Datum pište ve formátu RRRR-MM-DD. Web sám pozná,
+// které koncerty jsou nadcházející a které už proběhly.
+// ============================================================
+
+const KONCERTY = [
+  {
+    datum: "2026-07-11",
+    cas: "",
+    nazev: "Bluestone Festival",
+    misto: "Kamenice u Prahy, areál Dvorská niva",
+    popis: "Druhý ročník BLUESTONE FESTIVALU. Těšíme se na příjemnou atmosféru, kterou spolu prožijeme jako na předchozích ročnících. Úžasná letní akce!",
+    typ: "Koncert",
+    odkaz: "https://bluestonefest.cz/",
+    odkazText: "Web festivalu"
+  },
+  {
+    datum: "2026-08-21",
+    cas: "",
+    nazev: "Festival Kousek od Třeboně",
+    misto: "Suchdol nad Lužnicí, Lom na Františkově",
+    popis: "S Pavlínou Jíšovou, AG Flekem a Fleretem. U této akce se ujmu hlavně moderování. Podrobnosti již brzy.",
+    typ: "Moderování & koncert",
+    odkaz: "",
+    odkazText: ""
+  },
+  {
+    datum: "2026-09-12",
+    cas: "",
+    nazev: "Dozvuky prázdnin – Lomnice nad Lužnicí",
+    misto: "Lomnice nad Lužnicí",
+    popis: "Podrobnosti ke koncertu již brzy. Zapište si datum do kalendáře, ať se spolu potkáme.",
+    typ: "Koncert",
+    odkaz: "https://connect.boomevents.org/cs/encantar-sro-dcrau/dozvukyprazdnin26",
+    odkazText: "Vstupenky"
+  },
+  {
+    datum: "2026-06-07",
+    cas: "19:30",
+    nazev: "Akusticky v Balbínce",
+    misto: "Balbínova poetická hospůdka, Balbínova 6, Praha 2",
+    popis: "V Balbínce jsem vystoupil v doprovodu skvělých kytaristů pod vedením toho nejlepšího – Josefa Štěpánka.",
+    typ: "Koncert",
+    odkaz: "http://www.balbinka.cz/",
+    odkazText: "Balbínka"
+  },
+  {
+    datum: "2026-01-12",
+    cas: "19:00",
+    nazev: "Koncert v Balbínce s Pepou Štěpánkem",
+    misto: "Balbínova poetická hospůdka, Praha 2",
+    popis: "První koncert roku 2026 s kytarovým esem Pepou Štěpánkem.",
+    typ: "Koncert",
+    odkaz: "http://www.balbinka.cz/",
+    odkazText: "Balbínka"
+  }
+];
