@@ -136,7 +136,7 @@ function renderInstagram(prispevky) {
   if (!grid) return;
   const items = (prispevky || []).slice(0, 5);
   grid.innerHTML = items.map(p =>
-    `<blockquote class="instagram-media reveal" data-instgrm-permalink="${esc(p.url)}" data-instgrm-version="14"></blockquote>`
+    `<blockquote class="instagram-media" data-instgrm-permalink="${esc(p.url)}" data-instgrm-version="14"></blockquote>`
   ).join("");
   if (window.instgrm && window.instgrm.Embeds) {
     window.instgrm.Embeds.process();
