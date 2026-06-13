@@ -61,8 +61,8 @@ function gigHTML(k, past) {
   return `
     <article class="gig${past ? " past" : ""} reveal">
       <div class="gig-date">
-        <div class="day">${d.getDate()}.</div>
-        <div class="month">${MESICE[d.getMonth()]} ${d.getFullYear()}</div>
+        <div class="day">${d.getDate()}.${d.getMonth() + 1}.</div>
+        <div class="month">${d.getFullYear()}</div>
       </div>
       <div class="gig-info">
         <h3>${esc(k.nazev)}</h3>
@@ -94,7 +94,7 @@ function renderGigs(koncerty) {
   if (next && banner) {
     const d = new Date(next.datum + "T00:00:00");
     banner.innerHTML = `
-      <div class="date">${d.getDate()}. ${MESICE[d.getMonth()]} ${d.getFullYear()}</div>
+      <div class="date">${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}</div>
       <div class="info">
         <strong>${esc(next.nazev)}</strong>
         <span>${esc(next.misto)}</span>
