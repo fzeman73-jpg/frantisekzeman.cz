@@ -300,6 +300,10 @@ footer {
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s, transform .7s; }
 .reveal.visible { opacity: 1; transform: none; }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 /* ---------- Responzivita ---------- */
 @media (max-width: 900px) {
   section { padding: 70px 0; }

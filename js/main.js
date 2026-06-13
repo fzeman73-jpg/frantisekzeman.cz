@@ -140,12 +140,15 @@ function renderInstagram(prispevky) {
   ).join("");
   if (window.instgrm && window.instgrm.Embeds) {
     window.instgrm.Embeds.process();
-  } else {
-    const s = document.createElement("script");
-    s.async = true;
-    s.src = "//www.instagram.com/embed.js";
-    document.body.appendChild(s);
+    return;
   }
+  if (document.getElementById("ig-embed-script")) return;
+  const script = document.createElement("script");
+  script.id = "ig-embed-script";
+  script.async = true;
+  script.src = "https://www.instagram.com/embed.js";
+  script.onload = () => window.instgrm?.Embeds?.process();
+  document.body.appendChild(script);
 }
 
 // ---------- Galerie ----------
