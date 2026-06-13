@@ -32,6 +32,18 @@ collections:
               - { label: "Typ", name: typ, widget: select, options: ["Koncert", "Moderování & koncert", "Festival", "Jiné"], default: "Koncert" }
               - { label: "Odkaz (vstupenky / web akce)", name: odkaz, widget: string, required: false, default: "" }
               - { label: "Text odkazu (např. Vstupenky)", name: odkazText, widget: string, required: false, default: "" }
+      - name: instagram
+        label: "📸 Instagram novinky"
+        file: data/instagram.json
+        fields:
+          - label: Příspěvky
+            name: prispevky
+            widget: list
+            label_singular: příspěvek
+            summary: "{{fields.url}}"
+            hint: "Nový příspěvek přidej úplně na začátek (první v seznamu = nahoře na webu). Zobrazuje se max 5 nejnovějších, starší se automaticky skryjí."
+            fields:
+              - { label: "Odkaz na příspěvek (URL)", name: url, widget: string, hint: "Např. https://www.instagram.com/p/XXXXXXXXXXX/" }
       - name: galerie
         label: "📷 Galerie fotek"
         file: data/galerie.json

@@ -130,6 +130,24 @@ document.getElementById("toggle-past")?.addEventListener("click", function () {
   this.textContent = hidden ? "Skrýt proběhlé koncerty" : "Zobrazit proběhlé koncerty";
 });
 
+// ---------- Instagram ----------
+function renderInstagram(prispevky) {
+  const grid = document.getElementById("ig-grid");
+  if (!grid) return;
+  const items = (prispevky || []).slice(0, 5);
+  grid.innerHTML = items.map(p =>
+    `<blockquote class="instagram-media reveal" data-instgrm-permalink="${esc(p.url)}" data-instgrm-version="14"></blockquote>`
+  ).join("");
+  if (window.instgrm && window.instgrm.Embeds) {
+    window.instgrm.Embeds.process();
+  } else {
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = "//www.instagram.com/embed.js";
+    document.body.appendChild(s);
+  }
+}
+
 // ---------- Galerie ----------
 function renderGallery(fotky) {
   const grid = document.getElementById("gallery-grid");
@@ -147,12 +165,14 @@ async function init() {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   try {
-    const [kr, gr] = await Promise.all([
+    const [kr, gr, ir] = await Promise.all([
       fetch("data/koncerty.json", { cache: "no-cache" }),
-      fetch("data/galerie.json", { cache: "no-cache" })
+      fetch("data/galerie.json", { cache: "no-cache" }),
+      fetch("data/instagram.json", { cache: "no-cache" })
     ]);
     if (kr.ok) renderGigs((await kr.json()).koncerty || []);
     if (gr.ok) renderGallery((await gr.json()).fotky || []);
+    if (ir.ok) renderInstagram((await ir.json()).prispevky || []);
   } catch (e) {
     console.error("Nepodařilo se načíst data:", e);
   }
