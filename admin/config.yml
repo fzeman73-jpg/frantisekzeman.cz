@@ -32,6 +32,8 @@ collections:
               - { label: "Typ", name: typ, widget: select, options: ["Koncert", "Moderování & koncert", "Festival", "Jiné"], default: "Koncert" }
               - { label: "Odkaz (vstupenky / web akce)", name: odkaz, widget: string, required: false, default: "" }
               - { label: "Text odkazu (např. Vstupenky)", name: odkazText, widget: string, required: false, default: "" }
+              - { label: "Druhý odkaz (volitelný)", name: odkaz2, widget: string, required: false, default: "" }
+              - { label: "Text druhého odkazu", name: odkazText2, widget: string, required: false, default: "" }
       - name: instagram
         label: "📸 Instagram novinky"
         file: data/instagram.json

@@ -58,6 +58,9 @@ function gigHTML(k, past) {
   const odkaz = k.odkaz
     ? `<a class="btn btn-ghost" href="${esc(k.odkaz)}" target="_blank" rel="noopener">${esc(k.odkazText) || "Více"}</a>`
     : "";
+  const odkaz2 = k.odkaz2
+    ? `<a class="btn btn-ghost" href="${esc(k.odkaz2)}" target="_blank" rel="noopener">${esc(k.odkazText2) || "Více"}</a>`
+    : "";
   return `
     <article class="gig${past ? " past" : ""} reveal">
       <div class="gig-date">
@@ -70,6 +73,7 @@ function gigHTML(k, past) {
         <p>${esc(k.popis)}</p>
       </div>
       ${odkaz}
+      ${odkaz2}
     </article>`;
 }
 
