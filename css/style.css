@@ -208,6 +208,7 @@ blockquote {
 .gig-info .place { color: var(--accent); font-size: 14.5px; margin-bottom: 6px; }
 .gig-info p { color: var(--text-muted); font-size: 15px; }
 .gig .btn { white-space: nowrap; }
+.gig-links { display: flex; flex-direction: column; gap: 10px; }
 .gig.past { opacity: 0.55; }
 .gigs-empty { color: var(--text-muted); font-style: italic; }
 .past-toggle {

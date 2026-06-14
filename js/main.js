@@ -72,8 +72,7 @@ function gigHTML(k, past) {
         <div class="place">${esc(k.misto)}${k.cas ? " · od " + esc(k.cas) : ""} · ${esc(k.typ)}</div>
         <p>${esc(k.popis)}</p>
       </div>
-      ${odkaz}
-      ${odkaz2}
+      <div class="gig-links">${odkaz}${odkaz2}</div>
     </article>`;
 }
 
