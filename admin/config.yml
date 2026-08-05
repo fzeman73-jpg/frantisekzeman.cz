@@ -58,3 +58,30 @@ collections:
             fields:
               - { label: "Fotka", name: obrazek, widget: image }
               - { label: "Popisek", name: popisek, widget: string, required: false, default: "" }
+      - name: blog
+        label: "📝 Blog"
+        file: data/blog.json
+        fields:
+          - label: Články
+            name: clanky
+            widget: list
+            label_singular: článek
+            summary: "{{fields.datum}} – {{fields.nadpis}}"
+            fields:
+              - { label: "Datum", name: datum, widget: datetime, type: date, format: "YYYY-MM-DD", time_format: false }
+              - { label: "Slug (do URL, bez diakritiky a mezer)", name: slug, widget: string, hint: "Např. bluestone-fest-2026" }
+              - { label: "Nadpis", name: nadpis, widget: string }
+              - { label: "Perex (krátký úvod pro výpis a SEO popisek)", name: perex, widget: text }
+              - { label: "Titulní fotka", name: obrazek, widget: image }
+              - { label: "Titulní fotka pro sdílení (1200×630, volitelné)", name: obrazekOg, widget: image, required: false, default: "" }
+              - { label: "Štítky", name: stitky, widget: list, field: { label: "Štítek", name: stitek, widget: string }, required: false, default: [] }
+              - { label: "Obsah článku (HTML/odstavce)", name: obsah, widget: text }
+              - label: Fotogalerie k článku
+                name: galerie
+                widget: list
+                label_singular: fotka
+                required: false
+                default: []
+                fields:
+                  - { label: "Fotka", name: obrazek, widget: image }
+                  - { label: "Popisek", name: popisek, widget: string, required: false, default: "" }
