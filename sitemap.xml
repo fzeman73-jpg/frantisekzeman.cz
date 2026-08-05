@@ -2,4 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://frantisekzeman.cz/</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://frantisekzeman.cz/pro-media.html</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://frantisekzeman.cz/blog.html</loc><lastmod>2026-08-05</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://frantisekzeman.cz/blog-clanek.html?slug=bluestone-fest-2026</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
