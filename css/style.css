@@ -331,4 +331,37 @@ footer {
   .gig-date { text-align: left; display: flex; gap: 10px; align-items: baseline; }
   .band-grid, .press-grid, .video-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Blog ---------- */
+.blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 12px; }
+.blog-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; color: var(--text); display: flex; flex-direction: column;
+  transition: border-color .2s, transform .15s;
+}
+.blog-card:hover { border-color: var(--accent); transform: translateY(-3px); text-decoration: none; }
+.blog-card-img { aspect-ratio: 16/9; overflow: hidden; }
+.blog-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.blog-card-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.blog-card-date { color: var(--accent); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+.blog-card-body h2 { font-size: 22px; }
+.blog-card-body p { color: var(--text-muted); font-size: 15.5px; flex: 1; }
+.blog-card-more { color: var(--accent); font-size: 14.5px; font-weight: 500; }
+
+.article-container { max-width: 780px; }
+.blog-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.blog-tag {
+  font-size: 12.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent);
+  border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px;
+}
+.article-cover { border-radius: var(--radius); overflow: hidden; margin-bottom: 40px; }
+.article-cover img { width: 100%; height: auto; object-fit: cover; }
+.article-body { max-width: none; }
+.article-body p, .article-body blockquote { margin-bottom: 18px; color: var(--text-muted); font-size: 17px; }
+.article-body strong { color: var(--text); }
+.article-body blockquote {
+  border-left: 3px solid var(--accent); padding: 4px 0 4px 20px; font-style: italic; color: var(--text);
+}
+.article-body a { text-decoration: underline; }
