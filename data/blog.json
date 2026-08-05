@@ -17,6 +17,21 @@
         { "obrazek": "assets/img/blog/bluestone-fest-2026/smich-s-kapelou.jpg", "popisek": "Smích s kapelou během koncertu" },
         { "obrazek": "assets/img/blog/bluestone-fest-2026/poklona.jpg", "popisek": "Společná poklona celé kapely na závěr" }
       ]
+    },
+    {
+      "slug": "akusticky-v-balbince",
+      "datum": "2026-06-07",
+      "nadpis": "Akusticky v Balbínce: proč mě hraní po hospodách baví možná nejvíc",
+      "perex": "7. června jsem hrál akusticky v Balbínově poetické hospůdce v doprovodu skvělých kytaristů vedených Josefem Štěpánkem. Bez kapely, bez velkého pódia, jenom kytary a lidi na dosah ruky – přesně tady se pořád učím a sbírám ostruhy.",
+      "obrazek": "assets/img/galerie/nz5-9842.jpg",
+      "obrazekOg": "assets/img/blog/akusticky-v-balbince/cover-og.jpg",
+      "stitky": ["Koncerty", "Akustika", "Balbínka"],
+      "obsah": "<p><strong>7. června 2026</strong> jsem si zase zahrál akusticky v <strong>Balbínově poetické hospůdce</strong> na Praze 2 – v doprovodu skvělých kytaristů pod vedením toho nejlepšího, <strong>Josefa Štěpánka</strong>. Byl to už druhý koncert v Balbínce letos, tím prvním jsem dokonce v lednu otevíral celý rok 2026.</p><p>Hraní po hospodách má úplně jinou energii než festivalové pódium. Žádný velký zvukový systém, žádné světelné efekty, žádná kapela, za kterou se dá schovat – jenom pár kytar, mikrofon a lidi doslova na dosah ruky. Buď to funguje, protože to umíte a máte co říct, nebo to nefunguje vůbec. Nic mezi tím.</p><p>A přesně o tomhle to podle mě je. Na velkém pódiu vás unese zvuk, kapela, dav. V hospůdce jako Balbínka jste nazí – a to je paradoxně to nejlepší školení, jaké si můžu přát. Učím se tam číst publikum, hlídat tempo večera, prohodit pár slov mezi písničkami tak, aby to sedělo, a hlavně – zůstat v klidu, když se něco nepovede podle scénáře.</p><blockquote>Velké pódium vám dá adrenalin. Malá hospoda vám dá pokoru. A pokoru potřebuju mnohem častěji.</blockquote><p>Hrát s Pepou Štěpánkem a dalšími kytaristy je navíc velká škola sama o sobě – slyšet, jak dokážou jednu píseň obarvit úplně jinak jen tím, jak zahrají doprovod, mě pořád posouvá dál. Tyhle večery beru jako svoje ostruhy: každý další je trochu jiný, trochu těžší nebo trochu odvázanější, a pokaždé si z něj něco odnesu na velká pódia i do studia.</p><p>Takže pokud máte rádi hudbu zblízka, bez filtru a s trochou improvizace, sledujte <a href=\"index.html#koncerty\">koncerty</a> – akustická hraní po hospodách a klubech se tam objevují průběžně. A pokud provozujete klub nebo hospůdku a líbí se vám tenhle formát, napište mi na <a href=\"mailto:info@frantisekzeman.cz\">info@frantisekzeman.cz</a>.</p>",
+      "galerie": [
+        { "obrazek": "assets/img/galerie/nz5-9716.jpg", "popisek": "Akustické hraní na Praze – jen kytara a hlas" },
+        { "obrazek": "assets/img/galerie/nz6-1963.jpg", "popisek": "Chvíle mezi koncerty, kde vznikají nové písničky" },
+        { "obrazek": "assets/img/pribeh.jpg", "popisek": "František Zeman s kytarou" }
+      ]
     }
   ]
 }
