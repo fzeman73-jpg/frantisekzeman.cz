@@ -1,0 +1,22 @@
+{
+  "clanky": [
+    {
+      "slug": "bluestone-fest-2026",
+      "datum": "2026-07-11",
+      "nadpis": "Bluestone Fest 2026: nejlepší koncert, jaký jsme s kapelou kdy odehráli",
+      "perex": "11. července jsme s Kluky ze Šťastný planety a Janou Štěpánkovou hráli na Bluestone Festu v Kamenici u Prahy vedle Buty, Igora Orozoviče & CO. nebo Muchy. Byl to za mě nejlepší koncert naší kapely – a chceme jich takhle odehrát mnohem víc.",
+      "obrazek": "assets/img/blog/bluestone-fest-2026/cover.jpg",
+      "obrazekOg": "assets/img/blog/bluestone-fest-2026/cover-og.jpg",
+      "stitky": ["Koncerty", "Kluci ze Šťastný planety", "Bluestone Fest"],
+      "obsah": "<p><strong>11. července 2026</strong> jsme s kapelou <strong>Kluci ze Šťastný planety</strong> vystoupili na <strong>Bluestone Festu</strong> na Dvorské nivě v Kamenici u Prahy – a musím to napsat rovnou na začátek: bylo to za mě dosud nejlepší hraní, jaké jsme s klukama kdy měli.</p><p>Bluestone Fest je letní rodinný festival s pěkným line-upem – hráli tam mimo jiné <strong>Buty</strong>, <strong>Igor Orozovič &amp; CO.</strong>, <strong>Mucha</strong>, The Primitives Group nebo Marek Hlavica &amp; The Seladons. Být na jednom pódiu vedle kapel, na kterých jsem sám vyrůstal, je pro mě pořád trochu neskutečné – a o to větší respekt jsme na to odehrání koncertu měli.</p><p>Jenže respekt rychle vystřídala obrovská radost. Od prvního tónu to na pódiu sedlo – zvuk, publikum před pódiem, atmosféra letního odpoledne. A hlavně: sedlo to mezi náma na pódiu. Kluci hráli famózně a s <strong>Janou Štěpánkovou</strong> jsme si to na vokálech a v duetech užili tak, jak se to jen tak nepovede.</p><blockquote>Jsou koncerty, po kterých víte, že jste odvedli dobrou práci. A pak jsou koncerty, po kterých máte husí kůži ještě cestou domů. Bluestone Fest patřil do té druhé kategorie.</blockquote><p>S Janou zpíváme spolu teprve nedávno, ale na pódiu je to znát čím dál víc – umí si se mnou pohrávat s frázováním, umí mi nechat prostor a stejně tak si o něj umí říct. Přesně tenhle typ energie na pódiu potřebujeme, a proto bychom chtěli hrát v tomhle složení a s touhle chemií mnohem víc.</p><p>Díky patří pořadatelům Bluestone Festu za skvěle zvládnutou akci, zvukařům za famózní zvuk na pódiu i všem, kdo přišli, zpívali s náma a vydrželi až do konce – bez vás by to nebylo ono. Pokud jste tam byli, děkujeme. Pokud jste nebyli, snad se potkáme na některém z dalších <a href=\"index.html#koncerty\">koncertů</a>.</p><p>A pokud děláte festival nebo akci a chcete si k nám o hraní napsat, ozvěte se na <a href=\"mailto:info@frantisekzeman.cz\">info@frantisekzeman.cz</a> – rádi si o tom popovídáme.</p>",
+      "galerie": [
+        { "obrazek": "assets/img/blog/bluestone-fest-2026/zpev-detail.jpg", "popisek": "František Zeman zpívá na hlavním pódiu Bluestone Festu" },
+        { "obrazek": "assets/img/blog/bluestone-fest-2026/jana-banjo.jpg", "popisek": "Duet s Janou Štěpánkovou, v pozadí banjo Dalibora Cidlinského jr." },
+        { "obrazek": "assets/img/blog/bluestone-fest-2026/zpev-podvecer.jpg", "popisek": "Podvečerní set pod cedulí Bluestone Fest" },
+        { "obrazek": "assets/img/blog/bluestone-fest-2026/gesto.jpg", "popisek": "Emoce na pódiu" },
+        { "obrazek": "assets/img/blog/bluestone-fest-2026/smich-s-kapelou.jpg", "popisek": "Smích s kapelou během koncertu" },
+        { "obrazek": "assets/img/blog/bluestone-fest-2026/poklona.jpg", "popisek": "Společná poklona celé kapely na závěr" }
+      ]
+    }
+  ]
+}
