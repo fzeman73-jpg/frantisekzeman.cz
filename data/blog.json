@@ -32,6 +32,20 @@
         { "obrazek": "assets/img/galerie/nz6-1963.jpg", "popisek": "Chvíle mezi koncerty, kde vznikají nové písničky" },
         { "obrazek": "assets/img/pribeh.jpg", "popisek": "František Zeman s kytarou" }
       ]
+    },
+    {
+      "slug": "folk-a-country-na-dracici-2026",
+      "datum": "2026-08-21",
+      "nadpis": "Folk & Country na Dračici: těšíme se, budu hrát i moderovat celý večer",
+      "perex": "V pátek 21. srpna hraju na Folk & Country festivalu Na Dračici u Suchdola nad Lužnicí – doprovodí mě Josef Štěpánek, Dalibor Cidlinský jr. a jako host na violoncello Pavel Barnáš. Navíc si to celé poprvé i odmoderuju. Vedle mě na pódiu se vystřídají Katastrofa, Pavlína Jíšová, AG Flek a Fleret.",
+      "obrazek": "assets/img/kapela.png",
+      "obrazekOg": "assets/img/blog/folk-a-country-na-dracici-2026/cover-og.jpg",
+      "stitky": ["Koncerty", "Festival", "Moderování"],
+      "obsah": "<p>Na jih Čech, do kraje kolem Lomnice a Třeboně, jezdím celý život – mám tam chalupu a je to místo, kde nejvíc vypnu. O to větší radost mám, že si v pátek <strong>21. srpna 2026</strong> od 16:00 zahraju kousek odtud na <strong>Folk & Country festivalu Na Dračici</strong>, v lokalitě „V Myti“ u Suchdola nad Lužnicí – v bývalém lomu u řeky Dračice, kousek od Františkova.</p><p>Line-up je letos parádní: <strong>Katastrofa</strong>, <strong>Pavlína Jíšová</strong>, <strong>AG Flek</strong> a <strong>Fleret</strong> – kapely a jména, na kterých jsem sám dřív stál v publiku. Hrát s nimi na jednom programu je pro mě pořád tak trochu splněný sen a beru to jako závazek přidat k nim kvalitní set.</p><p>Tentokrát navíc v trochu jiném obsazení, než jste zvyklí z velkých pódií. Doprovodí mě <strong>Josef Štěpánek</strong> na kytaru a <strong>Dalibor Cidlinský jr.</strong> na piano a banjo, a jako host se k nám přidá <strong>Pavel Barnáš na violoncello</strong> – nástroj, který naším písničkám dodá úplně nové, hlubší zabarvení. Jsem zvědavý, jak si to spolu užijeme, protože tuhle sestavu jsem ještě na pódiu neměl.</p><blockquote>Poprvé si vezmu na starost nejen svůj vlastní set, ale i moderování celého odpoledne. Trochu respekt mám, ale těším se na to možná víc než na cokoliv jiného.</blockquote><p>Moderování je pro mě nová výzva – spojit dohromady program, uvést kapely, které obdivuju, a udržet atmosféru mezi jednotlivými vystoupeními, to je jiná disciplína než zpívat vlastní písničky. Ale přesně tenhle typ zodpovědnosti mě v poslední době baví čím dál víc, ať už na pódiu nebo mimo něj.</p><p>Festival se koná v přírodním areálu bývalého lomu – parkování je na louce na kraji obce, odkud je to k pódiu asi 10 minut pěšky, takže počítejte s trochou procházky do přírody. Vstupné je 350 Kč na místě, 300 Kč v předprodeji přes <a href=\"https://cbsystem.cz/cs/akce/9645-folk-country-festival-na-dracici\" target=\"_blank\" rel=\"noopener\">cbsystem.cz</a>, děti do 14 let mají vstup zdarma.</p><p>Pokud budete v tenhle den v kraji, přijďte – ať už mě slyšet zpívat, nebo moderovat. A pokud jste tam byli, budu moc rád za jakoukoliv vzpomínku nebo fotku, napište mi na <a href=\"mailto:info@frantisekzeman.cz\">info@frantisekzeman.cz</a>. Aktuální info ke koncertu najdete i v sekci <a href=\"index.html#koncerty\">Koncerty</a>.</p>",
+      "galerie": [
+        { "obrazek": "assets/img/galerie/koncert-2024a.jpg", "popisek": "Ilustrační foto z jiného letního koncertu – podobnou atmosféru čekám i Na Dračici" },
+        { "obrazek": "assets/img/galerie/nz5-9900.jpg", "popisek": "František Zeman" }
+      ]
     }
   ]
 }
