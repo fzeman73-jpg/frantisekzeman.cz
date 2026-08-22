@@ -376,3 +376,62 @@ footer {
   margin-top: 12px; text-align: center;
   color: var(--text-muted); font-size: 14.5px;
 }
+
+/* ---------- Videa (videa.html + ukázka na homepage) ---------- */
+.vid-jumps { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px; }
+.vid-jump {
+  display: inline-block; padding: 8px 18px; border-radius: 999px;
+  border: 1px solid var(--border); background: rgba(255,255,255,0.03);
+  color: var(--text-muted); font-size: 14px; transition: color .2s, border-color .2s;
+}
+.vid-jump:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+.vid-group { margin-bottom: 72px; scroll-margin-top: 100px; }
+.vid-group:last-child { margin-bottom: 0; }
+
+.vid-grid { display: grid; gap: 24px; }
+.vid-grid--sirka { grid-template-columns: repeat(2, 1fr); }
+.vid-grid--vyska { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+.vid-card { display: flex; flex-direction: column; gap: 12px; }
+.vid-thumb {
+  position: relative; display: block; width: 100%; padding: 0;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; background: var(--bg-card); cursor: pointer;
+  aspect-ratio: 16 / 9;
+}
+.vid-card[data-format="vyska"] .vid-thumb { aspect-ratio: 9 / 16; }
+.vid-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s, opacity .3s; }
+.vid-thumb:hover img { transform: scale(1.04); opacity: .85; }
+.vid-thumb iframe { width: 100%; height: 100%; border: 0; display: block; }
+.vid-thumb--playing { cursor: default; }
+.vid-play {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.vid-play svg { filter: drop-shadow(0 4px 12px rgba(0,0,0,.45)); }
+.vid-play-bg { fill: rgba(14, 13, 11, .78); transition: fill .2s; }
+.vid-thumb:hover .vid-play-bg { fill: var(--accent); }
+
+.vid-meta h3 { font-size: 19px; line-height: 1.3; }
+.vid-meta p { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+.vid-card[data-format="vyska"] .vid-meta h3 { font-size: 17px; }
+
+.vid-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  background: var(--accent-soft); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px 32px;
+}
+.vid-cta h2 { font-size: 24px; margin-bottom: 6px; }
+.vid-cta p { color: var(--text-muted); font-size: 16px; }
+
+.video-more { margin-top: 36px; }
+
+@media (max-width: 900px) {
+  .vid-grid--vyska { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  .vid-grid--sirka { grid-template-columns: 1fr; }
+  .vid-grid--vyska { grid-template-columns: repeat(2, 1fr); }
+  .vid-cta { padding: 24px; }
+}
