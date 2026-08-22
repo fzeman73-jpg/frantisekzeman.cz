@@ -365,3 +365,14 @@ footer {
   border-left: 3px solid var(--accent); padding: 4px 0 4px 20px; font-style: italic; color: var(--text);
 }
 .article-body a { text-decoration: underline; }
+
+/* ---------- Video v článku ---------- */
+.article-video { margin: 36px 0; display: flex; flex-direction: column; align-items: center; }
+.article-video video {
+  display: block; max-width: 100%; max-height: 72vh; height: auto;
+  border-radius: var(--radius); background: #000;
+}
+.article-video figcaption {
+  margin-top: 12px; text-align: center;
+  color: var(--text-muted); font-size: 14.5px;
+}
