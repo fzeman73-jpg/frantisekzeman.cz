@@ -58,6 +58,33 @@ collections:
             fields:
               - { label: "Fotka", name: obrazek, widget: image }
               - { label: "Popisek", name: popisek, widget: string, required: false, default: "" }
+      - name: videa
+        label: "🎬 Videa"
+        file: data/videa.json
+        fields:
+          - label: Skupiny videí
+            name: skupiny
+            widget: list
+            label_singular: skupina
+            summary: "{{fields.nazev}}"
+            hint: "Skupina = jeden blok na stránce Videa (např. Oficiální klipy nebo konkrétní koncert)."
+            fields:
+              - { label: "ID skupiny (do odkazu, bez diakritiky a mezer)", name: id, widget: string, hint: "Např. dracice-2026 – vznikne odkaz videa.html#dracice-2026" }
+              - { label: "Název skupiny", name: nazev, widget: string }
+              - { label: "Popis skupiny", name: popis, widget: text, required: false, default: "" }
+              - { label: "Datum akce (volitelné)", name: datum, widget: datetime, type: date, format: "YYYY-MM-DD", time_format: false, required: false }
+              - { label: "Formát videí", name: format, widget: select, options: [{ label: "Na šířku (klasické video)", value: "sirka" }, { label: "Na výšku (Shorts / mobil)", value: "vyska" }], default: "sirka" }
+              - label: Videa
+                name: videa
+                widget: list
+                label_singular: video
+                summary: "{{fields.nazev}}"
+                default: []
+                fields:
+                  - { label: "Název", name: nazev, widget: string }
+                  - { label: "Odkaz na YouTube (nebo jen ID videa)", name: youtube, widget: string, hint: "Můžeš vložit celou adresu, i ze Shorts – ID se vytáhne samo." }
+                  - { label: "Popisek pod videem", name: popis, widget: string, required: false, default: "" }
+                  - { label: "Vlastní náhledový obrázek (volitelné)", name: nahled, widget: image, required: false, default: "" }
       - name: blog
         label: "📝 Blog"
         file: data/blog.json
