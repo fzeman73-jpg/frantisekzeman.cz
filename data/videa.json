@@ -1,0 +1,93 @@
+{
+  "skupiny": [
+    {
+      "id": "klipy",
+      "nazev": "Oficiální klipy",
+      "popis": "Videoklipy k písním z alb Otevřená srdce a Kluci ze Šťastný planety.",
+      "format": "sirka",
+      "videa": [
+        {
+          "nazev": "Usínáš",
+          "youtube": "7sbO_xPP85o",
+          "popis": "Kluci ze Šťastný planety",
+          "nahled": ""
+        },
+        {
+          "nazev": "Ty víš, že vím",
+          "youtube": "t6mXoCJU4Ys",
+          "popis": "Kluci ze Šťastný planety",
+          "nahled": ""
+        },
+        {
+          "nazev": "Otevřená srdce",
+          "youtube": "LtT4Y3g-II0",
+          "popis": "Oficiální video k titulní písni alba",
+          "nahled": ""
+        },
+        {
+          "nazev": "Děvčata",
+          "youtube": "Qm1hZ9UZMts",
+          "popis": "Otevřená srdce",
+          "nahled": ""
+        },
+        {
+          "nazev": "Vlak z dětství",
+          "youtube": "9BnBoOLUEy0",
+          "popis": "Otevřená srdce",
+          "nahled": ""
+        },
+        {
+          "nazev": "Ty se ptáš",
+          "youtube": "SN6xyYZZPq8",
+          "popis": "Otevřená srdce",
+          "nahled": ""
+        },
+        {
+          "nazev": "Mám svý chyby",
+          "youtube": "cCyGQwuBGu0",
+          "popis": "Otevřená srdce",
+          "nahled": ""
+        },
+        {
+          "nazev": "Když nejsem s Tebou",
+          "youtube": "QfXQmvPqw0E",
+          "popis": "Otevřená srdce",
+          "nahled": ""
+        },
+        {
+          "nazev": "V metru",
+          "youtube": "-AtWh06WE9E",
+          "popis": "Otevřená srdce",
+          "nahled": ""
+        }
+      ]
+    },
+    {
+      "id": "dracice-2026",
+      "nazev": "Živě: Folk & Country na Dračici 2026",
+      "popis": "Záběry z Folk & Country festivalu v bývalém lomu u Suchdola nad Lužnicí – 21. srpna 2026, s Josefem Štěpánkem, Daliborem Cidlinským jr., Janou Štěpánkovou a Pavlem Barnášem na violoncello.",
+      "datum": "2026-08-21",
+      "format": "vyska",
+      "videa": [
+        {
+          "nazev": "Na Dračici 2026 – živě (1)",
+          "youtube": "fixbPQNaB18",
+          "popis": "Folk & Country festival, 21. 8. 2026",
+          "nahled": "assets/img/videa/dracice-2026/dracice-a.jpg"
+        },
+        {
+          "nazev": "Na Dračici 2026 – živě (2)",
+          "youtube": "b8GQglrwfK0",
+          "popis": "Folk & Country festival, 21. 8. 2026",
+          "nahled": "assets/img/videa/dracice-2026/dracice-b.jpg"
+        },
+        {
+          "nazev": "Na Dračici 2026 – živě (3)",
+          "youtube": "z8L_-u8OsKs",
+          "popis": "Folk & Country festival, 21. 8. 2026",
+          "nahled": "assets/img/videa/dracice-2026/dracice-c.jpg"
+        }
+      ]
+    }
+  ]
+}
