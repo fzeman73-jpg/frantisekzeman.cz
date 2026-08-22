@@ -60,7 +60,7 @@
   <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=5">
   <style>
     .hero::before {
       background: linear-gradient(105deg, rgba(14,13,11,0.95) 35%, rgba(14,13,11,0.55) 65%, rgba(14,13,11,0.35)),
@@ -81,7 +81,7 @@
         <li><a href="#kapela">Kapela</a></li>
         <li><a href="#koncerty">Koncerty</a></li>
         <li><a href="#galerie">Galerie</a></li>
-        <li><a href="#video">Video</a></li>
+        <li><a href="videa.html">Videa</a></li>
         <li><a href="#instagram">Instagram</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
@@ -213,17 +213,8 @@
     <div class="container">
       <span class="section-label">Klipy</span>
       <h2 class="section-title">Video</h2>
-      <div class="video-grid">
-        <div class="video reveal"><iframe src="https://www.youtube.com/embed/7sbO_xPP85o" title="Usínáš" loading="lazy" allowfullscreen></iframe></div>
-        <div class="video reveal"><iframe src="https://www.youtube.com/embed/t6mXoCJU4Ys" title="Ty víš, že vím" loading="lazy" allowfullscreen></iframe></div>
-        <div class="video reveal"><iframe src="https://www.youtube.com/embed/LtT4Y3g-II0" title="Otevřená srdce – oficiální video" loading="lazy" allowfullscreen></iframe></div>
-        <div class="video reveal"><iframe src="https://www.youtube.com/embed/Qm1hZ9UZMts" title="Děvčata" loading="lazy" allowfullscreen></iframe></div>
-        <div class="video reveal"><iframe src="https://www.youtube.com/embed/9BnBoOLUEy0" title="Vlak z dětství" loading="lazy" allowfullscreen></iframe></div>
-        <div class="video reveal"><iframe src="https://www.youtube.com/embed/SN6xyYZZPq8" title="Ty se ptáš" loading="lazy" allowfullscreen></iframe></div>
-        <div class="video reveal"><iframe src="https://www.youtube.com/embed/cCyGQwuBGu0" title="Mám svý chyby" loading="lazy" allowfullscreen></iframe></div>
-        <div class="video reveal"><iframe src="https://www.youtube.com/embed/QfXQmvPqw0E" title="Když nejsem s Tebou" loading="lazy" allowfullscreen></iframe></div>
-        <div class="video reveal"><iframe src="https://www.youtube.com/embed/-AtWh06WE9E" title="V metru" loading="lazy" allowfullscreen></iframe></div>
-      </div>
+      <div class="vid-grid vid-grid--sirka" id="video-grid-home"></div>
+      <p class="video-more"><a class="btn btn-ghost" href="videa.html">Všechna videa →</a></p>
     </div>
   </section>
 
@@ -303,6 +294,7 @@
 
   <div class="lightbox" id="lightbox"><img src="" alt="Fotografie"></div>
 
+  <script src="js/videa.js?v=1"></script>
   <script src="js/main.js?v=2"></script>
 </body>
 </html>

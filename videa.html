@@ -12,25 +12,27 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blog – František Zeman</title>
-  <meta name="description" content="Novinky, koncertní zážitky a zákulisí z hudební cesty Františka Zemana a kapely Kluci ze Šťastný planety.">
+  <title>Videa – František Zeman</title>
+  <meta name="description" content="Videoklipy Františka Zemana a záběry z koncertů – alba Otevřená srdce a Kluci ze Šťastný planety, živé vystoupení z festivalu Na Dračici a další.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://frantisekzeman.cz/blog.html">
+  <link rel="canonical" href="https://frantisekzeman.cz/videa.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="cs_CZ">
-  <meta property="og:title" content="Blog – František Zeman">
-  <meta property="og:description" content="Novinky, koncertní zážitky a zákulisí z hudební cesty Františka Zemana a kapely Kluci ze Šťastný planety.">
-  <meta property="og:url" content="https://frantisekzeman.cz/blog.html">
+  <meta property="og:title" content="Videa – František Zeman">
+  <meta property="og:description" content="Videoklipy a záběry z koncertů Františka Zemana a kapely Kluci ze Šťastný planety.">
+  <meta property="og:url" content="https://frantisekzeman.cz/videa.html">
   <meta property="og:image" content="https://frantisekzeman.cz/assets/img/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blog – František Zeman">
-  <meta name="twitter:description" content="Novinky, koncertní zážitky a zákulisí z hudební cesty Františka Zemana.">
+  <meta name="twitter:title" content="Videa – František Zeman">
+  <meta name="twitter:description" content="Videoklipy a záběry z koncertů Františka Zemana.">
   <meta name="twitter:image" content="https://frantisekzeman.cz/assets/img/og-image.jpg">
   <meta name="theme-color" content="#0e0d0b">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
   <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
@@ -46,24 +48,35 @@
         <li><a href="index.html#kapela">Kapela</a></li>
         <li><a href="index.html#koncerty">Koncerty</a></li>
         <li><a href="index.html#galerie">Galerie</a></li>
-        <li><a href="videa.html">Videa</a></li>
+        <li><a href="videa.html" aria-current="page">Videa</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="index.html#kontakt">Kontakt</a></li>
       </ul>
     </div>
   </nav>
 
-  <section style="padding-top: 160px;">
+  <section style="padding-top: 160px; padding-bottom: 0;">
     <div class="container">
-      <span class="section-label">Novinky</span>
-      <h1 class="section-title">Blog</h1>
-      <p class="lead" style="margin-bottom: 12px;">Koncertní zážitky, novinky a zákulisí z hudební cesty – přímo ode mě a od kapely Kluci ze Šťastný planety.</p>
+      <span class="section-label">Koukat a poslouchat</span>
+      <h1 class="section-title">Videa</h1>
+      <p class="lead">Oficiální klipy k písničkám i záběry přímo z koncertů. Všechno najdeš taky na
+        <a href="https://www.youtube.com/channel/UCI8yUsdPgnI4yjeiN0zwKvA" target="_blank" rel="noopener">mém YouTube kanálu</a>.</p>
     </div>
+  </section>
+
+  <section style="padding-top: 40px;">
+    <div class="container" id="videa-root"></div>
   </section>
 
   <section style="padding-top: 0;">
     <div class="container">
-      <div class="blog-grid" id="blog-grid"></div>
+      <div class="vid-cta">
+        <div>
+          <h2>Nechceš přijít o nové video?</h2>
+          <p>Nová videa dávám nejdřív na YouTube – odběrem ti nic neuteče.</p>
+        </div>
+        <a class="btn btn-primary" href="https://www.youtube.com/channel/UCI8yUsdPgnI4yjeiN0zwKvA?sub_confirmation=1" target="_blank" rel="noopener">Odebírat na YouTube</a>
+      </div>
     </div>
   </section>
 
@@ -73,6 +86,6 @@
     </div>
   </footer>
 
-  <script src="js/blog.js?v=1"></script>
+  <script src="js/videa.js?v=1"></script>
 </body>
 </html>
