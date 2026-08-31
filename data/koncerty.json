@@ -57,9 +57,9 @@
     {
       "datum": "2026-11-09",
       "cas": "",
-      "nazev": "Koncert v Praze",
+      "nazev": "Podzimní setkání",
       "misto": "Praha – místo bude upřesněno",
-      "popis": "Koncert v Praze v sestavě Josef Štěpánek (kytara), Dalibor Cidlinský jr. (kytara), Pavel Barnáš (violoncello), Jana Štěpánková (zpěv) a František Zeman. Přesné místo, čas a další podrobnosti budeme postupně doplňovat.",
+      "popis": "Koncert Podzimní setkání v Praze v sestavě Josef Štěpánek (kytara), Dalibor Cidlinský jr. (klavír), Pavel Barnáš (violoncello), Jana Štěpánková (zpěv) a František Zeman (zpěv). Přesné místo, čas a další podrobnosti budeme postupně doplňovat.",
       "typ": "Koncert"
     },
     {
@@ -67,16 +67,18 @@
       "cas": "",
       "nazev": "Okolo Třeboně",
       "misto": "Třeboň – místo bude upřesněno",
-      "popis": "Vystoupení v rámci festivalu Okolo Třeboně v sestavě Josef Štěpánek (kytara), Dalibor Cidlinský jr. (kytara), Pavel Barnáš (violoncello), Jana Štěpánková (zpěv) a František Zeman. Přesné místo, čas a další podrobnosti budeme postupně doplňovat.",
+      "popis": "Vystoupení v rámci festivalu Okolo Třeboně v sestavě Josef Štěpánek (kytara), Dalibor Cidlinský jr. (klavír), Pavel Barnáš (violoncello), Jana Štěpánková (zpěv) a František Zeman (zpěv). Přesné místo, čas a další podrobnosti budeme postupně doplňovat.",
       "typ": "Koncert"
     },
     {
       "datum": "2027-07-10",
       "cas": "",
-      "nazev": "Koncert s velkou kapelou",
-      "misto": "Místo bude upřesněno",
-      "popis": "Koncert v obsazení celé velké kapely. Přesné místo, čas a další podrobnosti budeme postupně doplňovat.",
-      "typ": "Koncert"
+      "nazev": "Bluestone Festival",
+      "misto": "Kamenice u Prahy, areál Dvorská niva",
+      "popis": "Bluestone Festival v Kamenici u Prahy – hrajeme v obsazení celé velké kapely. Přesné podrobnosti budeme postupně doplňovat.",
+      "typ": "Koncert",
+      "odkaz": "https://bluestonefest.cz/",
+      "odkazText": "Web festivalu"
     }
   ]
 }
