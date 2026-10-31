@@ -69,7 +69,8 @@ function renderArticle(clanek, siteUrl) {
   const articleUrl = `${siteUrl}/blog-clanek.html?slug=${encodeURIComponent(clanek.slug)}`;
   document.getElementById("canonical-link")?.setAttribute("href", articleUrl);
   document.getElementById("og-url")?.setAttribute("content", articleUrl);
-  const ogImage = `${siteUrl}/${clanek.obrazekOg || clanek.obrazek}`;
+  const ogSrc = clanek.obrazekOg || clanek.obrazek;
+  const ogImage = /^https?:\/\//.test(ogSrc) ? ogSrc : `${siteUrl}/${ogSrc}`;
   document.getElementById("og-image")?.setAttribute("content", ogImage);
   document.getElementById("twitter-image")?.setAttribute("content", ogImage);
 

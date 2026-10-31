@@ -3,9 +3,15 @@
     {
       "id": "klipy",
       "nazev": "Oficiální klipy",
-      "popis": "Videoklipy k písním z alb Otevřená srdce a Kluci ze Šťastný planety.",
+      "popis": "Videoklipy k písním z alb Otevřená srdce a Kluci ze Šťastný planety i k novým singlům.",
       "format": "sirka",
       "videa": [
+        {
+          "nazev": "Vlastní slunce",
+          "youtube": "sW6ClLyQVxs",
+          "popis": "Duet s Janou Štěpánkovou (2026)",
+          "nahled": ""
+        },
         {
           "nazev": "Usínáš",
           "youtube": "7sbO_xPP85o",
