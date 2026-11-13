@@ -92,19 +92,28 @@ function renderGigs(koncerty) {
 
   pastEl.innerHTML = past.map(k => gigHTML(k, true)).join("");
 
-  const next = upcoming[0];
-  const banner = document.getElementById("next-gig");
-  if (next && banner) {
-    const d = new Date(next.datum + "T00:00:00");
-    banner.innerHTML = `
-      <div class="date">${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}</div>
-      <div class="info">
-        <strong>${esc(next.nazev)}</strong>
-        <span>${esc(next.misto)}</span>
-      </div>
-      <a class="btn btn-primary" href="#koncerty">Detail</a>`;
-  } else if (banner) {
-    banner.style.display = "none";
+  // Úvod: „Kde hraju“ – nejbližší koncerty vedle hlavního textu
+  const heroGigs = document.getElementById("hero-gigs");
+  const heroList = document.getElementById("hero-gigs-list");
+  if (heroList && upcoming.length) {
+    heroList.innerHTML = upcoming.slice(0, 3).map(k => {
+      const d = new Date(k.datum + "T00:00:00");
+      const href = k.odkaz || "#koncerty";
+      const ext = k.odkaz ? ' target="_blank" rel="noopener"' : "";
+      return `
+        <a class="hero-gig" href="${esc(href)}"${ext}>
+          <div class="hero-gig-date">
+            <span class="d">${d.getDate()}.${d.getMonth() + 1}.</span>
+            <span class="y">${d.getFullYear()}</span>
+          </div>
+          <div class="hero-gig-info">
+            <strong>${esc(k.nazev)}</strong>
+            <span>${esc(k.misto)}${k.cas ? " · od " + esc(k.cas) : ""}</span>
+          </div>
+        </a>`;
+    }).join("");
+  } else if (heroGigs) {
+    heroGigs.style.display = "none";
   }
 
   // SEO: strukturovaná data nadcházejících koncertů

@@ -126,6 +126,57 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 600; line-height: 1.15;
 .next-gig .info strong { display: block; font-size: 17px; }
 .next-gig .info span { color: var(--text-muted); font-size: 15px; }
 
+/* ---------- Úvod: Kde hraju (vedle textu) ---------- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+  gap: 48px; align-items: center;
+}
+.hero-gigs {
+  justify-self: end; width: 100%;
+  background: rgba(14, 13, 11, 0.62);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 26px 18px;
+}
+.hero-gigs-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 12px; margin-bottom: 10px;
+}
+.hero-gigs-label {
+  color: var(--accent); letter-spacing: 4px; text-transform: uppercase; font-size: 14px;
+}
+.hero-gigs-all { color: var(--text-muted); font-size: 14px; white-space: nowrap; }
+.hero-gigs-all:hover { color: var(--accent); text-decoration: none; }
+.hero-gig {
+  display: flex; align-items: center; gap: 18px;
+  padding: 16px 0; color: var(--text);
+  border-top: 1px solid var(--border);
+  transition: transform .15s;
+}
+.hero-gig:first-child { border-top: 0; }
+.hero-gig:hover { text-decoration: none; transform: translateX(4px); }
+.hero-gig:hover strong { color: var(--accent); }
+.hero-gig-date { min-width: 74px; display: flex; flex-direction: column; line-height: 1.1; }
+.hero-gig-date .d { font-family: var(--font-head); font-size: 26px; color: var(--accent); }
+.hero-gig-date .y { font-size: 13px; color: var(--text-muted); letter-spacing: 1px; }
+.hero-gig-info strong { display: block; font-size: 17px; transition: color .2s; }
+.hero-gig-info span { display: block; margin-top: 2px; line-height: 1.45; color: var(--text-muted); font-size: 14.5px; }
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-gigs { justify-self: start; max-width: 560px; }
+  .hero-actions .btn-ghost[href="#koncerty"] { display: none; } /* panel je hned pod tím */
+}
+@media (max-width: 640px) {
+  .hero { padding-top: 110px; min-height: 0; }
+  .hero p { font-size: 17px; margin-bottom: 28px; }
+  .hero-gigs { padding: 20px 20px 12px; }
+  .hero-gig { gap: 14px; padding: 13px 0; }
+  .hero-gig-date { min-width: 58px; }
+  .hero-gig-date .d { font-size: 22px; }
+}
+
 /* ---------- Alba ---------- */
 .albums { background: var(--bg-soft); }
 .album-grid {
