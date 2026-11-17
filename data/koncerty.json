@@ -79,6 +79,16 @@
       "typ": "Koncert",
       "odkaz": "https://bluestonefest.cz/",
       "odkazText": "Web festivalu"
+    },
+    {
+      "datum": "2027-09-18",
+      "cas": "",
+      "nazev": "Dozvuky prázdnin",
+      "misto": "Lomnice nad Lužnicí",
+      "popis": "Na Dozvucích prázdnin v Lomnici nad Lužnicí vystoupíme už počtvrté a moc se tam těšíme! Sestava: Josef Štěpánek (kytara), Dalibor Cidlinský jr. (klavír), Jana Štěpánková (zpěv), František Zeman (zpěv) a možná i Pavel Barnáš (violoncello). Čas, program a vstupenky budeme postupně doplňovat.",
+      "typ": "Koncert",
+      "odkaz": "https://dozvukyprazdnin.cz/",
+      "odkazText": "Web akce"
     }
   ]
 }
