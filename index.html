@@ -372,18 +372,20 @@
       el.addEventListener("input", () => el.setCustomValidity(""));
     });
 
-    // Klasické odeslání (FormSubmit odpovídá pomalu, AJAX s limitem padal) – po odeslání návrat zpět s poděkováním
-    f.addEventListener("submit", () => {
+    // Odeslání na pozadí (sendBeacon): FormSubmit odpovídá i desítky vteřin, návštěvník nečeká.
+    // Prohlížeč doručí data i po zavření stránky. Bez podpory beaconu klasický POST.
+    f.addEventListener("submit", e => {
       const cz = document.getElementById("invite-date-cz");
       if (d.value) { const [y, m, dd] = d.value.split("-"); cz.value = `${+dd}. ${+m}. ${y}`; } else cz.value = "";
-      const btn = f.querySelector("button"); btn.disabled = true; btn.textContent = "Odesílám…";
-      st.textContent = "Odesílám pozvánku, chvilku strpení…";
-      if (window.gtag) gtag("event", "generate_lead", { form: "pozvete-nas" });
-    });
-    // Návrat tlačítkem Zpět: znovu povolit tlačítko
-    window.addEventListener("pageshow", () => {
-      const btn = f.querySelector("button"); btn.disabled = false; btn.textContent = "Odeslat pozvánku";
-      if (!location.search.includes("odeslano") && st.textContent.startsWith("Odesílám")) st.textContent = "";
+      if (!navigator.sendBeacon) return; // klasické odeslání
+      e.preventDefault();
+      if (navigator.sendBeacon(f.action, new FormData(f))) {
+        f.reset();
+        st.textContent = "Díky! Pozvánka je na cestě, brzy se ozveme. 🎶";
+        if (window.gtag) gtag("event", "generate_lead", { form: "pozvete-nas" });
+      } else {
+        f.submit(); // záloha
+      }
     });
   })();
   </script>
