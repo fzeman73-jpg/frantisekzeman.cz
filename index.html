@@ -303,7 +303,7 @@
           </label>
         </div>
         <div class="f-row">
-          <label>Termín<input type="date" name="Termín" id="invite-date" data-msg="Vyberte prosím datum od dneška do 3 let"></label>
+          <label>Termín<input type="date" id="invite-date" data-msg="Vyberte prosím datum od dneška do 3 let"></label><input type="hidden" name="Termín" id="invite-date-cz">
           <label>Místo<input type="text" name="Místo" placeholder="město / prostor"></label>
         </div>
         <label>Napište nám víc<textarea name="Zpráva" rows="4" placeholder="Kolik bude hostů, jak dlouho hrát, cokoli dalšího…"></textarea></label>
@@ -351,11 +351,11 @@
   <script src="js/videa.js?v=1"></script>
   <script src="js/main.js?v=3"></script>
   <script>
-  // Formulář „Pozvěte nás“ – kontrola polí + odeslání přes FormSubmit (AJAX)
+  // Formulář „Pozvěte nás“ – kontrola polí + odeslání přes FormSubmit
   (function () {
     const f = document.getElementById("invite-form"), st = document.getElementById("invite-status");
     if (!f) return;
-    if (location.search.includes("odeslano")) st.textContent = "Díky! Pozvánka dorazila, brzy se ozveme.";
+    if (location.search.includes("odeslano")) { st.textContent = "Díky! Pozvánka dorazila, brzy se ozveme. 🎶"; history.replaceState(null, "", location.pathname + "#pozvete-nas"); }
 
     // Datum: jen dnešek a dál
     const d = document.getElementById("invite-date");
@@ -372,25 +372,18 @@
       el.addEventListener("input", () => el.setCustomValidity(""));
     });
 
-    f.addEventListener("submit", async e => {
-      e.preventDefault();
-      const btn = f.querySelector("button"); btn.disabled = true;
-      st.textContent = "Odesílám… může to pár vteřin trvat.";
-      const data = new FormData(f);
-      if (d.value) { const [y, m, dd] = d.value.split("-"); data.set("Termín", `${+dd}. ${+m}. ${y}`); }
-      const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 60000);
-      try {
-        const r = await fetch(f.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
-          method: "POST", headers: { Accept: "application/json" }, body: data, signal: ctrl.signal
-        });
-        const res = await r.json().catch(() => ({}));
-        if (!r.ok || String(res.success) !== "true") throw new Error(res.message || "HTTP " + r.status);
-        f.reset(); st.textContent = "Díky! Pozvánka dorazila, brzy se ozveme. 🎶";
-        if (window.gtag) gtag("event", "generate_lead", { form: "pozvete-nas" });
-      } catch (err) {
-        console.warn("Formulář:", err);
-        st.textContent = "Něco se nepovedlo – zkuste to prosím znovu, nebo napište na info@frantisekzeman.cz.";
-      } finally { clearTimeout(t); btn.disabled = false; }
+    // Klasické odeslání (FormSubmit odpovídá pomalu, AJAX s limitem padal) – po odeslání návrat zpět s poděkováním
+    f.addEventListener("submit", () => {
+      const cz = document.getElementById("invite-date-cz");
+      if (d.value) { const [y, m, dd] = d.value.split("-"); cz.value = `${+dd}. ${+m}. ${y}`; } else cz.value = "";
+      const btn = f.querySelector("button"); btn.disabled = true; btn.textContent = "Odesílám…";
+      st.textContent = "Odesílám pozvánku, chvilku strpení…";
+      if (window.gtag) gtag("event", "generate_lead", { form: "pozvete-nas" });
+    });
+    // Návrat tlačítkem Zpět: znovu povolit tlačítko
+    window.addEventListener("pageshow", () => {
+      const btn = f.querySelector("button"); btn.disabled = false; btn.textContent = "Odeslat pozvánku";
+      if (!location.search.includes("odeslano") && st.textContent.startsWith("Odesílám")) st.textContent = "";
     });
   })();
   </script>
