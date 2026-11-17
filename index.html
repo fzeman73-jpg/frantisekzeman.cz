@@ -56,14 +56,14 @@
     ]
   }
   </script>
-  <meta name="theme-color" content="#0e0d0b">
+  <meta name="theme-color" content="#fdf8f0">
   <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=7">
   <style>
     .hero::before {
-      background: linear-gradient(105deg, rgba(14,13,11,0.95) 35%, rgba(14,13,11,0.55) 65%, rgba(14,13,11,0.35)),
+      background: linear-gradient(105deg, rgba(48,26,12,0.92) 30%, rgba(120,52,20,0.45) 65%, rgba(224,102,46,0.18)),
                   url("assets/img/hero.jpg") 12% 32% / cover no-repeat;
     }
   </style>
@@ -85,6 +85,7 @@
         <li><a href="#instagram">Instagram</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
+        <li><a class="nav-cta" href="#pozvete-nas">Pozvěte nás</a></li>
       </ul>
     </div>
   </nav>
@@ -93,17 +94,18 @@
   <header class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="hero-kicker">Zpěvák</div>
+        <div class="hero-kicker">Ahoj, já jsem</div>
         <h1>František Zeman</h1>
-        <p>Písně o životě, lásce a svobodě. Na pódiu i ve studiu s těmi nejlepšími muzikanty v Česku.</p>
+        <p>Zpívám písně o životě, lásce a svobodě – a hlavně pro radost. S partou skvělých muzikantů, kterým říkáme Kluci ze Šťastný planety. Přijďte si zazpívat s námi.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#hudba">Poslechnout si alba</a>
-          <a class="btn btn-ghost" href="#koncerty">Kde hraju</a>
+          <a class="btn btn-primary" href="#hudba">▶ Pustit si písničky</a>
+          <a class="btn btn-ghost" href="#koncerty">Přijďte na koncert</a>
+          <a class="btn btn-ghost btn-invite" href="#pozvete-nas">Pozvěte nás na akci</a>
         </div>
       </div>
       <aside class="hero-gigs" id="hero-gigs" aria-label="Kde hraju">
         <div class="hero-gigs-head">
-          <span class="hero-gigs-label">Kde hraju</span>
+          <span class="hero-gigs-label">Kde se potkáme</span>
           <a href="#koncerty" class="hero-gigs-all">Všechny koncerty →</a>
         </div>
         <div class="hero-gigs-list" id="hero-gigs-list"></div>
@@ -114,7 +116,7 @@
   <!-- ================= HUDBA / ALBA ================= -->
   <section class="albums" id="hudba">
     <div class="container">
-      <span class="section-label">Diskografie</span>
+      <span class="section-label">♪ Poslechněte si</span>
       <h2 class="section-title">Hudba</h2>
       <p class="lead">Dvě autorská alba, jeden rukopis: upřímné texty a melodie, které si budete broukat cestou domů.</p>
       <div class="album-grid">
@@ -170,7 +172,7 @@
   <!-- ================= KAPELA ================= -->
   <section class="band" id="kapela">
     <div class="container">
-      <span class="section-label">Kapela</span>
+      <span class="section-label">Kdo se mnou hraje</span>
       <h2 class="section-title">Kluci ze Šťastný planety</h2>
       <div class="band-photos reveal">
         <figure>
@@ -197,7 +199,7 @@
   <!-- ================= KONCERTY ================= -->
   <section id="koncerty">
     <div class="container">
-      <span class="section-label">Naživo</span>
+      <span class="section-label">Přijďte za námi</span>
       <h2 class="section-title">Koncerty</h2>
       <div class="gig-list" id="gigs-upcoming"></div>
       <button class="past-toggle" id="toggle-past">Zobrazit proběhlé koncerty</button>
@@ -265,12 +267,58 @@
     </div>
   </section>
 
+  <!-- ================= POZVĚTE NÁS ================= -->
+  <section class="invite" id="pozvete-nas">
+    <div class="container invite-grid">
+      <div class="invite-text reveal">
+        <span class="section-label">Zahrajeme i u vás</span>
+        <h2 class="section-title">Pozvěte nás na akci</h2>
+        <p class="lead">Festival, firemní večírek, oslava, svatba nebo komorní koncert? Rádi přijedeme – v plné sestavě s kapelou, nebo akusticky v menším složení.</p>
+        <ul class="invite-points">
+          <li>🎸 Vlastní písně i známé covery, které si lidi zazpívají</li>
+          <li>🎤 Plná kapela, nebo akustická sestava podle prostoru</li>
+          <li>📋 Technické podklady a stage plan najdete <a href="pro-media.html">pro pořadatele</a></li>
+        </ul>
+      </div>
+      <form class="invite-form reveal" id="invite-form" action="https://formsubmit.co/fzeman73@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Pozvánka na akci – frantisekzeman.cz">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://frantisekzeman.cz/?odeslano=1#pozvete-nas">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="f-row">
+          <label>Jméno *<input type="text" name="Jméno" required autocomplete="name"></label>
+          <label>E-mail *<input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <div class="f-row">
+          <label>Telefon<input type="tel" name="Telefon" autocomplete="tel"></label>
+          <label>Typ akce
+            <select name="Typ akce">
+              <option>Festival / koncert</option>
+              <option>Firemní akce</option>
+              <option>Soukromá oslava</option>
+              <option>Svatba</option>
+              <option>Jiné</option>
+            </select>
+          </label>
+        </div>
+        <div class="f-row">
+          <label>Termín<input type="text" name="Termín" placeholder="např. 12. 6. 2027"></label>
+          <label>Místo<input type="text" name="Místo" placeholder="město / prostor"></label>
+        </div>
+        <label>Napište nám víc<textarea name="Zpráva" rows="4" placeholder="Kolik bude hostů, jak dlouho hrát, cokoli dalšího…"></textarea></label>
+        <button class="btn btn-primary" type="submit">Odeslat pozvánku</button>
+        <p class="invite-status" id="invite-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+
   <!-- ================= KONTAKT ================= -->
   <section class="contact" id="kontakt">
     <div class="container">
-      <span class="section-label">Pojďme se potkat</span>
+      <span class="section-label">Napište mi</span>
       <h2 class="section-title">Kontakt</h2>
-      <p class="lead" style="margin: 0 auto;">Pro koncerty, spolupráci i jen tak napište:</p>
+      <p class="lead" style="margin: 0 auto;">Chcete nás pozvat na akci, domluvit spolupráci, nebo mi jen napsat, která písnička vám sedla? Budu rád.</p>
       <a class="email" href="mailto:info@frantisekzeman.cz">info@frantisekzeman.cz</a>
       <div class="socials">
         <a href="https://www.facebook.com/frantisekzemanmusic/" target="_blank" rel="noopener" aria-label="Facebook">
@@ -302,5 +350,28 @@
 
   <script src="js/videa.js?v=1"></script>
   <script src="js/main.js?v=3"></script>
+  <script>
+  // Formulář „Pozvěte nás“ – odeslání přes FormSubmit (AJAX), bez JS klasický POST
+  (function () {
+    const f = document.getElementById("invite-form"), st = document.getElementById("invite-status");
+    if (!f) return;
+    if (location.search.includes("odeslano")) st.textContent = "Díky! Pozvánka dorazila, brzy se ozveme.";
+    f.addEventListener("submit", async e => {
+      e.preventDefault();
+      const btn = f.querySelector("button"); btn.disabled = true; st.textContent = "Odesílám…";
+      try {
+        const r = await fetch(f.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+          method: "POST", headers: { Accept: "application/json" }, body: new FormData(f)
+        });
+        if (!r.ok) throw 0;
+        f.reset(); st.textContent = "Díky! Pozvánka dorazila, brzy se ozveme. 🎶";
+        if (window.gtag) gtag("event", "generate_lead", { form: "pozvete-nas" });
+      } catch (_) {
+        st.textContent = "Něco se nepovedlo – zkuste to prosím znovu, nebo napište na info@frantisekzeman.cz.";
+      }
+      btn.disabled = false;
+    });
+  })();
+  </script>
 </body>
 </html>
