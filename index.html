@@ -280,12 +280,12 @@
           <li>📋 Technické podklady a stage plan najdete <a href="pro-media.html">pro pořadatele</a></li>
         </ul>
       </div>
-      <form class="invite-form reveal" id="invite-form" action="https://formsubmit.co/6a38ebbfd7bb0be1bb3a87d5c0acb0f5" method="POST">
-        <input type="hidden" name="_subject" value="Pozvánka na akci – frantisekzeman.cz">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://frantisekzeman.cz/?odeslano=1#pozvete-nas">
-        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <form class="invite-form reveal" id="invite-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="388a2952-5821-492f-9331-83f1c95278e6">
+        <input type="hidden" name="subject" value="Pozvánka na akci – frantisekzeman.cz">
+        <input type="hidden" name="from_name" value="Web frantisekzeman.cz">
+        <input type="hidden" name="redirect" value="https://frantisekzeman.cz/?odeslano=1#pozvete-nas">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="f-row">
           <label>Jméno *<input type="text" name="Jméno" required autocomplete="name"></label>
           <label>E-mail *<input type="email" name="email" required autocomplete="email" inputmode="email" pattern="[^@\s]+@[^@\s]+\.[A-Za-z]{2,}" data-msg="Zadejte prosím platný e-mail, např. jan@email.cz"></label>
@@ -351,7 +351,7 @@
   <script src="js/videa.js?v=1"></script>
   <script src="js/main.js?v=3"></script>
   <script>
-  // Formulář „Pozvěte nás“ – kontrola polí + odeslání přes FormSubmit
+  // Formulář „Pozvěte nás“ – kontrola polí + odeslání přes Web3Forms
   (function () {
     const f = document.getElementById("invite-form"), st = document.getElementById("invite-status");
     if (!f) return;
@@ -372,20 +372,24 @@
       el.addEventListener("input", () => el.setCustomValidity(""));
     });
 
-    // Odeslání na pozadí (sendBeacon): FormSubmit odpovídá i desítky vteřin, návštěvník nečeká.
-    // Prohlížeč doručí data i po zavření stránky. Bez podpory beaconu klasický POST.
-    f.addEventListener("submit", e => {
+    // Odeslání přes Web3Forms (odpovídá do ~1 s); bez JS klasický POST s přesměrováním zpět
+    f.addEventListener("submit", async e => {
+      e.preventDefault();
       const cz = document.getElementById("invite-date-cz");
       if (d.value) { const [y, m, dd] = d.value.split("-"); cz.value = `${+dd}. ${+m}. ${y}`; } else cz.value = "";
-      if (!navigator.sendBeacon) return; // klasické odeslání
-      e.preventDefault();
-      if (navigator.sendBeacon(f.action, new FormData(f))) {
+      const btn = f.querySelector("button"); btn.disabled = true; btn.textContent = "Odesílám…"; st.textContent = "";
+      const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 20000);
+      try {
+        const r = await fetch(f.action, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(f), signal: ctrl.signal });
+        const res = await r.json().catch(() => ({}));
+        if (!r.ok || !res.success) throw new Error(res.message || "HTTP " + r.status);
         f.reset();
-        st.textContent = "Díky! Pozvánka je na cestě, brzy se ozveme. 🎶";
+        st.textContent = "Díky! Pozvánka dorazila, brzy se ozveme. 🎶";
         if (window.gtag) gtag("event", "generate_lead", { form: "pozvete-nas" });
-      } else {
-        f.submit(); // záloha
-      }
+      } catch (err) {
+        console.warn("Formulář:", err);
+        st.textContent = "Něco se nepovedlo – zkuste to prosím znovu, nebo napište na info@frantisekzeman.cz.";
+      } finally { clearTimeout(t); btn.disabled = false; btn.textContent = "Odeslat pozvánku"; }
     });
   })();
   </script>
