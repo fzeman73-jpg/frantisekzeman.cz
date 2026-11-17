@@ -288,10 +288,10 @@
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="f-row">
           <label>Jméno *<input type="text" name="Jméno" required autocomplete="name"></label>
-          <label>E-mail *<input type="email" name="email" required autocomplete="email"></label>
+          <label>E-mail *<input type="email" name="email" required autocomplete="email" inputmode="email" pattern="[^@\s]+@[^@\s]+\.[A-Za-z]{2,}" data-msg="Zadejte prosím platný e-mail, např. jan@email.cz"></label>
         </div>
         <div class="f-row">
-          <label>Telefon<input type="tel" name="Telefon" autocomplete="tel"></label>
+          <label>Telefon<input type="tel" name="Telefon" autocomplete="tel" pattern="\+?[0-9 ]{9,17}" placeholder="+420 777 123 456" data-msg="Zadejte telefon alespoň s 9 číslicemi"></label>
           <label>Typ akce
             <select name="Typ akce">
               <option>Festival / koncert</option>
@@ -303,7 +303,7 @@
           </label>
         </div>
         <div class="f-row">
-          <label>Termín<input type="text" name="Termín" placeholder="např. 12. 6. 2027"></label>
+          <label>Termín<input type="date" name="Termín" id="invite-date" data-msg="Vyberte prosím datum od dneška do 3 let"></label>
           <label>Místo<input type="text" name="Místo" placeholder="město / prostor"></label>
         </div>
         <label>Napište nám víc<textarea name="Zpráva" rows="4" placeholder="Kolik bude hostů, jak dlouho hrát, cokoli dalšího…"></textarea></label>
@@ -351,25 +351,46 @@
   <script src="js/videa.js?v=1"></script>
   <script src="js/main.js?v=3"></script>
   <script>
-  // Formulář „Pozvěte nás“ – odeslání přes FormSubmit (AJAX), bez JS klasický POST
+  // Formulář „Pozvěte nás“ – kontrola polí + odeslání přes FormSubmit (AJAX)
   (function () {
     const f = document.getElementById("invite-form"), st = document.getElementById("invite-status");
     if (!f) return;
     if (location.search.includes("odeslano")) st.textContent = "Díky! Pozvánka dorazila, brzy se ozveme.";
+
+    // Datum: jen dnešek a dál
+    const d = document.getElementById("invite-date");
+    const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+    d.min = today.toISOString().slice(0, 10);
+    const max = new Date(today); max.setFullYear(max.getFullYear() + 3); d.max = max.toISOString().slice(0, 10);
+
+    // České chybové hlášky
+    f.querySelectorAll("input[required], input[pattern], input[type=date]").forEach(el => {
+      el.addEventListener("invalid", () => {
+        if (el.validity.valueMissing) el.setCustomValidity("Tohle pole prosím vyplňte");
+        else el.setCustomValidity(el.dataset.msg || "Zkontrolujte prosím tento údaj");
+      });
+      el.addEventListener("input", () => el.setCustomValidity(""));
+    });
+
     f.addEventListener("submit", async e => {
       e.preventDefault();
-      const btn = f.querySelector("button"); btn.disabled = true; st.textContent = "Odesílám…";
+      const btn = f.querySelector("button"); btn.disabled = true;
+      st.textContent = "Odesílám… může to pár vteřin trvat.";
+      const data = new FormData(f);
+      if (d.value) { const [y, m, dd] = d.value.split("-"); data.set("Termín", `${+dd}. ${+m}. ${y}`); }
+      const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 60000);
       try {
         const r = await fetch(f.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
-          method: "POST", headers: { Accept: "application/json" }, body: new FormData(f)
+          method: "POST", headers: { Accept: "application/json" }, body: data, signal: ctrl.signal
         });
-        if (!r.ok) throw 0;
+        const res = await r.json().catch(() => ({}));
+        if (!r.ok || String(res.success) !== "true") throw new Error(res.message || "HTTP " + r.status);
         f.reset(); st.textContent = "Díky! Pozvánka dorazila, brzy se ozveme. 🎶";
         if (window.gtag) gtag("event", "generate_lead", { form: "pozvete-nas" });
-      } catch (_) {
+      } catch (err) {
+        console.warn("Formulář:", err);
         st.textContent = "Něco se nepovedlo – zkuste to prosím znovu, nebo napište na info@frantisekzeman.cz.";
-      }
-      btn.disabled = false;
+      } finally { clearTimeout(t); btn.disabled = false; }
     });
   })();
   </script>
